@@ -23,16 +23,15 @@ pipeline {
         }  
       }
       steps{
-           echo 'Cloning Git' 
-           git(url: 'https://github.com/ayalgul/juice-shop.git', branch: 'master')
-      }      
-      steps {
+        echo 'Cloning Git' 
+        git(url: 'https://github.com/ayalgul/juice-shop.git', branch: 'master')
+     
         echo 'Installing Dependencies'
         echo "Building Version ${NEW_VERSION}" 
         git(url: 'https://github.com/ayalgul/juice-shop.git', branch: 'master')
         sh 'npm install'
-      }
-      steps {
+      
+      
         echo 'Start Server' 
       }
     }
