@@ -1,22 +1,22 @@
 pipeline {
   agent any
   stages {
-    stage('build') {
+    stage('Build') {
       steps {
         echo 'I am in the build stage'
         git(url: 'https://github.com/ayalgul/juice-shop.git', branch: 'master')
       }
     }
 
-    stage('Build') {
+    stage('Test') {
       steps {
-        echo 'I am in the Build Stage '
+        echo 'I am in the Test Stage '
       }
     }
 
-    stage('Test') {
+    stage('Deploy') {
       steps {
-        echo 'I am in the Test stage '
+        echo 'I am in the Deploy stage '
       }
     }
 
