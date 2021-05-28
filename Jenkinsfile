@@ -7,6 +7,10 @@ pipeline {
     NEW_VERSION = '1.2.0' //normally you would extract this info and increment
     //SERVER_CREDENTIALS = credentials('credentialID') //Binds the credentails, you need to install the credentials binding plugin, takes the id referrence for the credentials. 
   }
+  parameters{
+     //string(name:'VERSION' defaultValue: '1.2.0' description: 'version to deploy on prod')
+     //choices(name:'VERSION' choices['1.0','1.1', '1.2'])
+     booleanParam(name:'executeTest' defaultValue: true description: 'version to deploy on prod')
   tools{
   }
   stages {
@@ -20,13 +24,14 @@ pipeline {
         echo 'I am in the build stage'
         echo "Building Version ${NEW_VERSION}" 
         git(url: 'https://github.com/ayalgul/juice-shop.git', branch: 'master')
+        sh 'npm install'
       }
     }
 
     stage('Test') {
       when {
         expression{
-            BRANCH_NAME == "development"
+            params.executeTest == true 
         }  
       }   
       steps {
