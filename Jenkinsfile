@@ -56,7 +56,7 @@ pipeline {
   post{
       always{
           //this posts always after the build pipeline no matter what can be used for monitoring.
-          echo 'done with Build
+          echo 'Done with Build'
       }
   
       success{
