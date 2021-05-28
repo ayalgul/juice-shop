@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Dev') {
+    stage('build') {
       steps {
         echo 'I am in the dev stage'
         git(url: 'https://github.com/ayalgul/juice-shop.git', branch: 'master')
