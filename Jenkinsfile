@@ -55,13 +55,14 @@ pipeline {
   }
   post{
       always{
-          //this posts always after the build pipeline no matter what can be used for monitoring. 
+          //this posts always after the build pipeline no matter what can be used for monitoring.
+          echo 'done with Build
       }
   }
-  success{
+  //success{
     // runs when the pipeline is succesfull
-  }
-  failure{
+  //}
+  //failure{
     //runs when the pipeline is a failure. 
-  }
+  //}
 }
