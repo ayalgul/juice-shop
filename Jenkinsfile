@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        echo 'I am in the dev stage'
+        echo 'I am in the build stage'
         git(url: 'https://github.com/ayalgul/juice-shop.git', branch: 'master')
       }
     }
