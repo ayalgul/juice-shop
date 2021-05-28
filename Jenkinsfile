@@ -58,11 +58,14 @@ pipeline {
           //this posts always after the build pipeline no matter what can be used for monitoring.
           echo 'done with Build
       }
+  
+      success{
+         // runs when the pipeline is succesfull
+         echo 'Build Success'
+      }
+      failure{
+         //runs when the pipeline is a failure. 
+         echo 'Build Failed' 
+      }
   }
-  //success{
-    // runs when the pipeline is succesfull
-  //}
-  //failure{
-    //runs when the pipeline is a failure. 
-  //}
 }
