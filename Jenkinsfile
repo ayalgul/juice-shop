@@ -10,7 +10,7 @@ pipeline {
   parameters{
      //string(name:'VERSION' defaultValue: '1.2.0' description: 'version to deploy on prod')
      //choices(name:'VERSION' choices['1.0','1.1', '1.2'])
-     booleanParam(name:'executeTest' defaultValue: true description: 'version to deploy on prod')
+     booleanParam(name: 'executeTest', defaultValue: true, description: 'version to deploy on prod')
   tools{
   }
   stages {
