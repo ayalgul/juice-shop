@@ -15,20 +15,25 @@ pipeline {
   //tools{
   //}
   stages {
-    stage('Clone Git'){
-       git(url: 'https://github.com/ayalgul/juice-shop.git', branch: 'master')
-    }
+
     stage('Build') {
       when {
         expression{
             (BRANCH_NAME == "development" || BRANCH_NAME == "master")  //&& CODE_CHANGE == true      
         }  
       }
+      steps{
+           echo 'Cloning Git' 
+           git(url: 'https://github.com/ayalgul/juice-shop.git', branch: 'master')
+      }      
       steps {
-        echo 'I am in the build stage'
+        echo 'Installing Dependencies'
         echo "Building Version ${NEW_VERSION}" 
         git(url: 'https://github.com/ayalgul/juice-shop.git', branch: 'master')
         sh 'npm install'
+      }
+      steps {
+        echo 'Start Server' 
       }
     }
 
