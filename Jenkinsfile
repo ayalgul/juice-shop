@@ -18,7 +18,11 @@ pipeline {
       steps {
         echo 'I am in the Deploy stage '
       }
-    }
-
+    } 
+  }
+  post{
+      always{
+          //this posts always after the build pipeline no matter what can be used for monitoring. 
+      }
   }
 }
