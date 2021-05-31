@@ -1,3 +1,4 @@
+def gv
 //CODE_CHANGE = getGitChanges{} create groovy script. 
 pipeline {
   agent any
@@ -15,7 +16,11 @@ pipeline {
   //tools{
   //}
   stages {
-
+    stage('Init') {
+      script{
+         gv = load "script.groovy"
+      }
+    }
     stage('Build') {
       when {
         expression{
