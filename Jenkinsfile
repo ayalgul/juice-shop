@@ -13,8 +13,9 @@ pipeline {
      //choices(name:'VERSION' choices['1.0','1.1', '1.2'])
      booleanParam(name: 'executeTest', defaultValue: true, description: 'version to deploy on prod')
   }
-  //tools{
-  //}
+  tools{
+     nodejs "nodejs"
+  }
   stages {
     stage('Init') {
       steps {
