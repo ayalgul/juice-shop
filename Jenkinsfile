@@ -43,7 +43,7 @@ pipeline {
         //   sh 'npm install'
         //}
          withNPMWrapper('MyCredential') {
-             npm 'init -y'
+             npm 'install'
 
         }        
       
