@@ -38,8 +38,10 @@ pipeline {
         echo 'Installing Dependencies'
         echo "Building Version ${NEW_VERSION}" 
         git(url: 'https://github.com/ayalgul/juice-shop.git', branch: 'master')
-        sh 'npm install'
-      
+       
+        withNPM(npmrcConfig: 'MyNpmrcConfig') {
+           sh 'npm install'
+        }
       
         echo 'Start Server' 
       }
