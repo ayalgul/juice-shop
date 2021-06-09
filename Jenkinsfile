@@ -39,7 +39,7 @@ pipeline {
         echo "Building Version ${NEW_VERSION}" 
         git(url: 'https://github.com/ayalgul/juice-shop.git', branch: 'master')
        
-        withNPM(npmrcConfig: 'MyNpmrcConfig') {
+        withNPM(npmrcConfig: '7e94dc90-e33e-43f3-9ffb-59311247a2ed') {
            sh 'npm install'
         }
       
